@@ -109,6 +109,7 @@ class RepaintGame:
             last_cell = last_cell.right
         self.state = RepaintGameState.PLAYING
         while True:
+            break
             self.print_field(self._first_cell)
             color = input("Vvodi: ")
             repaint(self._first_cell, color)
@@ -142,6 +143,14 @@ class RepaintGame:
     def state(self, a):
         self._state = a
 
+    def __getitem__(self, indices: tuple) -> Cell:
+        cell = self._first_cell
+        for _ in range(indices[0]):
+            cell = cell.down
+        for _ in range(indices[1]):
+            cell = cell.right
+        return cell
+
     def print_field(self, cell):
         curr_cell = cell
         down_cell = cell.down
@@ -168,6 +177,13 @@ class RepaintGame:
             if i != self.row_count - 1:
                 up_cell = up_cell.up
         return True
+
+    def left_mouse_click(self, row: int, col: int) -> None:
+        cell = self[row, col]
+        repaint(self._first_cell, cell.color)
+        last_cell = self[self.row_count - 1, self.col_count - 1]
+        if self.check_win(last_cell):
+            self.state = RepaintGameState.WIN
 
 
 def repaint(cell, color):
