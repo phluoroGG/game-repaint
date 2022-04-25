@@ -1,4 +1,4 @@
-from collections import namedtuple, OrderedDict
+from collections import namedtuple
 
 Color = namedtuple('RGB', 'red, green, blue')
 colors = {}
@@ -13,19 +13,19 @@ RED = RGB(200, 0, 0)
 BLUE = RGB(0, 0, 200)
 GREEN = RGB(0, 200, 0)
 YELLOW = RGB(200, 200, 0)
-TEAL = RGB(0, 200, 200)
+AQUA = RGB(0, 200, 200)
 PURPLE = RGB(200, 0, 200)
-G = RGB(200, 200, 200)
-Q = RGB(200, 200, 100)
-W = RGB(200, 100, 200)
-E = RGB(100, 200, 200)
+BANANA = RGB(200, 200, 100)
+PINK = RGB(200, 100, 200)
+SKY = RGB(100, 200, 200)
+GRAY = RGB(100, 100, 100)
 colors['red'] = RED
 colors['blue'] = BLUE
 colors['green'] = GREEN
 colors['yellow'] = YELLOW
-colors['teal'] = TEAL
+colors['aqua'] = AQUA
 colors['purple'] = PURPLE
-colors['g'] = G
-colors['q'] = Q
-colors['w'] = W
-colors['e'] = E
+colors['banana'] = BANANA
+colors['pink'] = PINK
+colors['sky'] = SKY
+colors['gray'] = GRAY
